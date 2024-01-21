@@ -1,0 +1,31 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>History</title>
+  </head>
+  <body>
+    <h1 id="countDisplay">Site Will Go Other Page At :</h1>
+    <button onclick="goBack()">Go back</button>
+    <button onclick="goFarward()">Fo Forward</button>
+    <button onclick="changeSite()">Change Site</button>
+    <script>
+      let count = 4;
+      const changeSite = () => {
+        setInterval(() => {
+          count--;
+          document.getElementById("countDisplay").innerHTML = count;
+          if(count==0){
+            window.location.href="position.html";
+          }
+        }, 1000);
+      };
+      const goBack = () => {
+        window.history.back();
+      };
+      const goFarward = () => {
+        window.history.forward();
+      };
+    </script>
+  </body>
+</html>

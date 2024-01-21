@@ -1,0 +1,27 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node Is Javascript</title>
+  </head>
+  <body>
+    <h1>Example of DOM</h1>
+    <input type="text" id="val" placeholder="Enter Name" />
+    <button onclick="add()">Add</button>
+    <h3>Result Show Here</h3>
+    <script>
+      const ul = document.createElement("ul");
+      document.body.appendChild(ul);
+      function add() {
+        const val = document.getElementById("val").value;
+        const li = document.createElement("li");
+        li.textContent = val;
+        li.style.color = `rgb(${Math.random()*1000}, ${Math.random()*1000}, ${Math.random()*100})`;
+        li.style.fontWeight='bold',
+        li.style.fontSize='20px';
+        ul.appendChild(li);
+        document.getElementById("val").value="";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AJAX - Learning</title>
+  </head>
+  <body>
+    <h1>Ajax Learning By W3Schools</h1>
+    <p id="content">Hello Change The Content By Clicking The Button</p>
+    <button onclick="loadDoc()">Change Content</button>
+    <script>
+      document.addEventListener('contextmenu', event => event.preventDefault());
+      function loadDoc() {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("content").innerHTML = this.responseText;
+          }
+        };
+        xhttp.open("GET", "about.txt", true);
+        xhttp.send();
+      }
+    </script>
+  </body>
+</html>

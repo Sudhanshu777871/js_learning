@@ -1,0 +1,26 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AJAX</title>
+  </head>
+  <body>
+    <h1>AJAX - Learning</h1>
+
+    <button onclick="changeContent()">Change Content</button>
+    <p id="content">Hello This Is Sudhanshu Kuamr From India....</p>
+    <!-- code for making a function to change the content  -->
+    <script>
+  function changeContent(){
+        const xhhtp = new XMLHttpRequest();
+        xhhtp.onreadystatechange = function(){
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("content").innerHTML = this.responseText;
+          }
+        };
+        xhhtp.open("GET", "about.txt", true);
+        xhhtp.send();
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trial</title>
+  </head>
+  <body>
+    <button onclick="myCreate()">Create Element</button>
+    <button onclick="inserBefore()">Insert Before Element</button>
+    <button onclick="replaceEle()">Replace Element</button>
+    <button onclick="removeEle()">Remove Element</button>
+    <!-- code for making a div -->
+    <div
+      id="mainCOntaineriv"
+      style="
+        border: 2px solid grey;
+        height: 400px;
+        width: 400px;
+        background-color: red;
+        color: white;
+        border-radius: 10px;
+        box-shadow: 2px 3px 4px aqua;
+        margin-left: 30%;
+        margin-top: 10%;
+        text-align: center;
+        overflow: auto;
+      "
+    >
+      <p>I am From Lucknow</p>
+
+      <p>I am Software Enginerr</p>
+      <p>I Love Coding</p>
+      <p>I am Looking For Internship</p>
+    </div>
+    <script>
+      function myCreate() {
+        const p = document.createElement("p");
+        const data = document.createTextNode("Hello I am Created From DOM");
+        p.appendChild(data);
+
+        const myDiv = document.getElementById("mainCOntaineriv");
+        myDiv.appendChild(p);
+      }
+
+      // function for remove element
+      function inserBefore() {
+        const p = document.createElement("p");
+        const data = document.createTextNode(
+          "Hello I am Created From DOM using insertbefore() method"
+        );
+        p.appendChild(data);
+
+        const myDiv = document.getElementById("mainCOntaineriv");
+        const firstPara = myDiv.getElementsByTagName("p");
+        myDiv.insertBefore(p, firstPara[0]);
+      }
+
+      // function for replace elemnet
+      function replaceEle() {
+        const p = document.createElement("p");
+        const data = document.createTextNode(
+          "Replace Content From DOM using replaceChild() method"
+        );
+        p.appendChild(data);
+
+        const myDiv = document.getElementById("mainCOntaineriv");
+        const firstPara = myDiv.getElementsByTagName("p");
+        myDiv.replaceChild(p, firstPara[0]);
+      }
+
+      // function for remove element
+      function removeEle() {
+        const myDiv = document.getElementById("mainCOntaineriv");
+        const firstPara = myDiv.getElementsByTagName("p");
+        firstPara[0].remove();
+      }
+    </script>
+  </body>
+</html>
